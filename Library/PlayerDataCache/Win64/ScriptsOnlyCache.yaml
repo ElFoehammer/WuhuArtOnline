@@ -490,7 +490,7 @@ ScriptsOnlyBuild:
     className: ApiConnector
   - hash:
       serializedVersion: 2
-      Hash: c7949b037e794d6eae577fbecf0d46c7
+      Hash: 007b770f7ebe8d1f484b7b63ee93d61d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerDash
@@ -1871,4 +1871,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /Users/ale_lizarraga/Wuhu/Builds/Wuhu Art Online Win 1.1/Wuhu.exe
+  playerPath: /Users/ale_lizarraga/Wuhu/Builds/Wuhu Art Online 1.2/Wuhu.exe
