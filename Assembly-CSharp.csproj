@@ -69,6 +69,7 @@
     <Compile Include="Assets\Mini Games\Basket\Scirpts\BasketWall4.cs" />
     <Compile Include="Assets\PlayerScripts\GrabAndDrop.cs" />
     <Compile Include="Assets\PlayerScripts\PlayerDash.cs" />
+    <Compile Include="Assets\PlayerScripts\PlayerDash2.cs" />
     <Compile Include="Assets\PlayerScripts\TurnOffRemote.cs" />
     <Compile Include="Assets\PlayerScripts\light.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Wuhu\island_mine\Meme\HatsuSpin.cs" />
     <Compile Include="Assets\Wuhu\island_sea\Water0.cs" />
     <Compile Include="Assets\Wuhu\island_sea\Water1.cs" />
     <Compile Include="Assets\Wuhu\island_sea\Water12.cs" />

@@ -1,29 +1,20 @@
 ﻿<Properties StartupConfiguration="{62ED09C1-F694-60B9-6322-5832C9620DBA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerScripts/PlayerDash.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Wuhu/island_mine/Meme/HatsuSpin.cs">
     <Files>
-      <File FileName="Assets/PlayerScripts/PlayerDash.cs" Line="14" Column="5" />
-      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs" />
-      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs" />
+      <File FileName="Assets/PlayerScripts/PlayerDash.cs" Line="131" Column="32" />
       <File FileName="Assets/PlayerScripts/GrabAndDrop.cs" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" />
       <File FileName="Assets/PlayerScripts/TurnOffRemote.cs" />
-      <File FileName="Assets/Wuhu/island_sea/Water0.cs" />
-      <File FileName="Assets/Wuhu/island_sea/Water25.cs" />
+      <File FileName="Assets/PlayerScripts/PlayerDash2.cs" Line="141" Column="31" />
+      <File FileName="Assets/Wuhu/island_mine/Meme/HatsuSpin.cs" Line="31" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Wuhu" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Mirror" expanded="True">
-                <Node name="Examples" expanded="True">
-                  <Node name="Tanks" expanded="True">
-                    <Node name="Scripts" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="PlayerScripts" expanded="True">
-                <Node name="PlayerDash.cs" selected="True" />
-              </Node>
+              <Node name="PlayerScripts" expanded="True" />
               <Node name="Standard Assets" expanded="True">
                 <Node name="Characters" expanded="True">
                   <Node name="FirstPersonCharacter" expanded="True">
@@ -31,13 +22,12 @@
                   </Node>
                 </Node>
               </Node>
-              <Node name="TextMesh Pro" expanded="True">
-                <Node name="Examples &amp; Extras" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
               <Node name="Wuhu" expanded="True">
-                <Node name="island_sea" expanded="True" />
+                <Node name="island_mine" expanded="True">
+                  <Node name="Meme" expanded="True">
+                    <Node name="HatsuSpin.cs" selected="True" />
+                  </Node>
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -47,6 +37,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="17fa520d-7a04-4c51-b790-bffd33059bf4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

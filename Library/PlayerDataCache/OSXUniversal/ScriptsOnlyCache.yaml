@@ -9,7 +9,8 @@ ScriptsOnlyBuild:
     - BasketWall3
     - BasketWall4
     - GrabAndDrop
-    - PlayerDash
+    - HatsuSpin
+    - PlayerDash2
     - TurnOffRemote
     - Water0
     - Water1
@@ -20,6 +21,7 @@ ScriptsOnlyBuild:
     - Waterfall
     - light
     Mirror.Components.dll:
+    - Mirror.Experimental.NetworkRigidbody
     - Mirror.NetworkTransform
     Mirror.dll:
     - Mirror.NetworkIdentity
@@ -69,6 +71,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -86,13 +92,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11624}
     - Class: 114
-      Script: {instanceID: 11762}
-    - Class: 114
       Script: {instanceID: 11966}
     - Class: 114
       Script: {instanceID: 12152}
     - Class: 114
       Script: {instanceID: 12260}
+    - Class: 114
+      Script: {instanceID: 12278}
     - Class: 114
       Script: {instanceID: 12284}
     - Class: 114
@@ -129,6 +135,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13728}
     - Class: 114
       Script: {instanceID: 13846}
+    - Class: 114
+      Script: {instanceID: 50534}
+    - Class: 114
+      Script: {instanceID: 97088}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -490,7 +500,7 @@ ScriptsOnlyBuild:
     className: ApiConnector
   - hash:
       serializedVersion: 2
-      Hash: 007b770f7ebe8d1f484b7b63ee93d61d
+      Hash: 78a177cedb034e6078c4128195ccc7fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerDash
@@ -1868,7 +1878,19 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 8c7993c18c1a2eda84f4da18fee06020
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerDash2
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HatsuSpin
   platform: 2
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /Users/ale_lizarraga/Wuhu/Builds/Wuhu Art Online 1.2.app
+  playerPath: /Users/ale_lizarraga/Wuhu/Builds/Wuhu Art Online 1.2.5.app

@@ -6,20 +6,28 @@ public class PlayerDash : MonoBehaviour
 {
 
     public float thrust = 10;
-    public float RefreshTime = 4;
-    //public float StopForce = 10;
+    public float yDashNerf = 0.6F;
     public float LagFrames = 10;
     float currentLag;
+    public float LagJFrames = 30;
+    float currentJLag;
     public float techFrames = 30;
     float currentTech;
+    public float framesFromDash = 20;
+    float currentFromDash;
+    public float framesWaveDash = 20;
+    float currentWaveDash;
     public float thrustMultiplier = 1.2F;
     public float verticalTechThrust = 10;
     public CapsuleCollider JumpCollider;
     public Camera cam;
     bool canDash;
     bool inLag;
+    bool inDashWin;
     bool grounded;
     bool validTech;
+    bool inJLag;
+    bool inWaveDash;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +37,12 @@ public class PlayerDash : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (inLag)
+        if (inDashWin)
         {
             validTech = true;
             currentTech = techFrames;
+        } else {
+            validTech = false;
         }
         grounded = true;
         stopLag();
@@ -40,13 +50,16 @@ public class PlayerDash : MonoBehaviour
 
     private void tickTechOff(){
         
-        if (Input.GetKeyDown(KeyCode.Space) && validTech)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            Vector3 launch = cam.transform.forward;
-            launch.y = verticalTechThrust;
-            gameObject.GetComponent<Rigidbody>().AddForce(launch * thrust * thrustMultiplier);
-            canDash = true;
+            if (validTech && !inJLag) {
+                gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                Vector3 launch = cam.transform.forward;
+                launch.y = verticalTechThrust;
+                gameObject.GetComponent<Rigidbody>().AddForce(launch * thrust * thrustMultiplier);
+                gameObject.GetComponent<AudioSource>().Play();
+                canDash = true;
+            }
         }
 
         if (validTech)
@@ -66,15 +79,22 @@ public class PlayerDash : MonoBehaviour
 
     private void enterLagDash()
     {
+        canDash = false;
         inLag = true;
         currentLag = LagFrames;
     }
 
-    private void tickLagOff(){
-        currentLag--;
-        if (currentLag <= 0 && grounded)
+    private void enterWaveDash()
+    {
+        currentWaveDash = framesWaveDash;
+        inWaveDash = true;
+    }
+
+    private void tickJLagOff(){
+        currentJLag--;
+        if (currentJLag <= 0 )
         {
-            stopLag();
+            inJLag = false;
         }
     }
 
@@ -84,14 +104,58 @@ public class PlayerDash : MonoBehaviour
         canDash = true;
     }
 
+    private void tickLagOff()
+    {
+        currentLag--;
+        if (currentLag <= 0 && grounded)
+        {
+            stopLag();
+        }
+    }
+
+    private void tickTechWinOff()
+    {
+        currentFromDash--;
+        if (currentFromDash <= 0)
+        {
+            inDashWin = false;
+        }
+    }
+
+    private void tickWaveDashOff()
+    {
+        currentWaveDash--;
+
+        if (currentWaveDash <= 0)
+        {
+            inWaveDash = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("q") && canDash){
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            gameObject.GetComponent<Rigidbody>().AddForce(cam.transform.forward * thrust);
-            canDash = false;
+            Vector3 dash = cam.transform.forward;
+            dash.y *= yDashNerf;
+            gameObject.GetComponent<Rigidbody>().AddForce(dash * thrust);
             enterLagDash();
+            currentFromDash = framesFromDash;
+            inDashWin = true;
+            if (!grounded)
+            {
+                enterWaveDash();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!grounded)
+            {
+                currentJLag = LagJFrames;
+                inJLag = true;
+            }
         }
 
         if (inLag)
@@ -101,6 +165,18 @@ public class PlayerDash : MonoBehaviour
         if (validTech)
         {
             tickTechOff();
+        }
+        if (inJLag)
+        {
+            tickJLagOff();
+        }
+        if (inDashWin)
+        {
+            tickTechWinOff();
+        }
+        if (inWaveDash)
+        {
+            tickWaveDashOff();
         }
     }
 }
