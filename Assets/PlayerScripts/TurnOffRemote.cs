@@ -6,6 +6,8 @@ public class TurnOffRemote : NetworkBehaviour
 {
 
 public Camera cam;
+public AudioListener ears;
+
 
     private void Start()
     {
@@ -15,11 +17,13 @@ public Camera cam;
         if(this.isLocalPlayer == true){
             scr.enabled = true;
             cam.enabled = true;
+            ears.enabled = true;
         }
         else 
         {
-        scr.enabled = false;
-        cam.enabled = false;
+            scr.enabled = false;
+            cam.enabled = false;
+            ears.enabled = false;
 
         }
     }

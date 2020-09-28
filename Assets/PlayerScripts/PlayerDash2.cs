@@ -32,6 +32,7 @@ public class PlayerDash2 : MonoBehaviour
     bool inWaveDash;
     bool spaceDown;
     public bool secondTech;
+    bool leftWaveDash;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,7 @@ public class PlayerDash2 : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         grounded = false;
+        leftWaveDash = true;
     }
 
     private void enterLagDash()
@@ -97,6 +99,7 @@ public class PlayerDash2 : MonoBehaviour
 
     private void enterWaveDash()
     {
+        leftWaveDash = false;
         noFriction.enabled = true;
         currentWaveDash = framesWaveDash;
         inWaveDash = true;
@@ -138,7 +141,7 @@ public class PlayerDash2 : MonoBehaviour
     {
         currentWaveDash--;
 
-        if (currentWaveDash <= techFrames && secondTech)
+        if (currentWaveDash <= techFrames && secondTech && leftWaveDash)
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
